@@ -7,34 +7,30 @@ def game_intro():
     
     
 game_intro()
-def game_rules():
-    print("The rules are simple:")
-    print("1. You will choose rock, paper, or scissors.")
-    print("2. The computer will randomly choose one of the three options.")
-    print("3. Rock beats scissors, scissors beats paper, and paper beats rock.")
-    print("4. If both you and the computer choose the same option, it's a tie.")
-    print("5. The game will continue until you decide to stop playing.")
-game_rules()
+
 def play_game():
     import random
-    options =["rock", "paper", "scissors"] 
+    options =["rock","paper","scissors"]  
     while True:
-        user_choice =input("Choose rock, paper, or scissors (or type 'exit' to quit): ").lower()
-        if user_choice == 'exit':
-            print("Thanks for playing! Goodbye!")
+        user = input("select rock, paper or scissor (type ""exit"" to quit) : ").lower()
+        if user == 'exit':
+            print ("Thank q for playing")
             break
-        if user_choice not in options:
-            print("Invalid choice. Please try again.")
+        if user not in options :
+            print("")
+            print("Invalid")
             continue
-        computer_choice = random.choice(options)
-        print(f"Computer chose: {computer_choice}")     
-        if user_choice == computer_choice:
-            print("It's a tie!")
-        elif (user_choice == "rock" and computer_choice == "scissors") or \
-             (user_choice == "scissors" and computer_choice == "paper") or \
-             (user_choice == "paper" and computer_choice == "rock"):
-            print("You win!")
-        else:
-            print("You lose!")      
-        
+        computer =random.choice(options)
+        print("Machine choose -- ", computer)
+        if user == computer :
+            print("it's a tie !!!!")
+        elif (user == "rock" and computer =="scissors") or (user == "scissors" and computer =="paper") or (user == "paper" and computer =="rock") :
+            print("!!! YOU WON !!!")
+        else :
+            print("you loose")
+
 play_game()
+#git status       # 1. Check what has changed (new, modified, deleted files)
+#git add .        # 2. Stage all changes (you can also use 'git add <filename>')
+#git commit -m "Your commit message"   # 3. Commit staged changes with a message
+#git push         # 4. Push the committed changes to the remote repository
